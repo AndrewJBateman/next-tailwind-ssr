@@ -1,31 +1,19 @@
 import Head from "next/head";
 import NextImage from "next/image";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
 
-export default function FullNote() {
-  const {
-    query: { id },
-  } = useRouter();
-
-  const [note, setNote] = useState(null);
-
-  useEffect(() => {
-    async function getNote() {
-      const resp = await fetch(
-        `https://jsonplaceholder.typicode.com/posts/${id}`
-      );
-      setNote(await resp.json());
+export async function getServerSideProps({params}) {
+  const resp = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${params.id}`
+  );
+  return {
+    props: {
+      note: await resp.json(),
     }
-    if (id) {
-      getNote();
-    }
-  }, [id]);
-
-  if (!note) {
-    return null;
   }
+}
 
+export default function FullNote({note}) {
   return (
     <div
       className="max-w-md px-8 py-4 mx-auto my-10 bg-white rounded-lg shadow-lg"

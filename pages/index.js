@@ -2,24 +2,23 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-export default function Home() {
-  const [notes, setNotes] = useState([]);
+export async function getServerSideProps() {
+  const resp = await fetch(
+    "https://jsonplaceholder.typicode.com/posts?userId=1"
+  );
+  return {
+    props: {
+      notes: await resp.json(),
+    },
+  };
+}
 
-  useEffect(() => {
-    async function getNotes() {
-      const resp = await fetch(
-        "https://jsonplaceholder.typicode.com/posts?userId=1"
-      );
-      setNotes(await resp.json());
-    }
-    getNotes();
-  }, []);
-
+export default function Home({ notes }) {
   return (
     <div>
       <Head>
-				<title>Notes List Page</title>
-			</Head>
+        <title>Notes List Page</title>
+      </Head>
       {notes.map((note) => (
         <div
           className="max-w-md px-8 py-4 mx-auto my-10 bg-white rounded-lg shadow-lg"
