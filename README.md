@@ -1,7 +1,7 @@
 # :zap: Next Tailwind SSR
 
 * A Next/Tailwind SSR app displaying API data in a card list
-* Clicking on one shows the full card
+* Clicking on a card navigates to a page with the full card
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/next-tailwind-ssr?style=plastic)
@@ -34,7 +34,7 @@
 
 ## :camera: Screenshots
 
-![Example screenshot](./imgs/home.png)
+![Example screenshot](./img/card.png)
 
 ## :signal_strength: Technologies
 
@@ -55,16 +55,30 @@
 
 ## :computer: Code Examples
 
-* tba
+* `note/[id].js` function to get static paths - required for Static Site Generation
 
 ```javascript
+export async function getStaticPaths() {
+  const resp = await fetch(
+    "https://jsonplaceholder.typicode.com/posts?userId=1"
+  );
+  const cards = await resp.json();
 
+  return {
+    paths: cards.map((card) => ({
+      params: {
+        id: card.id.toString()
+      }
+    })),
+    fallback: false,
+  };
+}
 ```
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working
-* To-Do: Complete
+* Status: Working. Deployed.
+* To-Do: Add PWA
 
 ## :clap: Inspiration
 
