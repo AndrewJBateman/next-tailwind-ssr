@@ -1,26 +1,42 @@
+import React from "react";
 import Head from "next/head";
 import NextImage from "next/image";
-import React from "react";
 
-export async function getServerSideProps({params}) {
+export async function getStaticPaths() {
+  const resp = await fetch(
+    "https://jsonplaceholder.typicode.com/posts?userId=1"
+  );
+  const cards = await resp.json();
+
+  return {
+    paths: cards.map((card) => ({
+      params: {
+        id: card.id.toString()
+      }
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const resp = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
   return {
     props: {
       note: await resp.json(),
-    }
-  }
+    },
+  };
 }
 
-export default function FullNote({note}) {
+export default function FullNote({ note }) {
   return (
     <div
       className="max-w-md px-8 py-4 mx-auto my-10 bg-white rounded-lg shadow-lg"
       key="{note.id}"
     >
       <Head>
-        <title>Full Note Page</title>
+        <title>{note.title}</title>
       </Head>
       <div>
         <h5 className="text-2xl font-semibold text-gray-800">
