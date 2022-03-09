@@ -16,7 +16,7 @@ class MyDocument extends Document {
 						content="Build a Next.js PWA with 100% lighthouse score"
 					></meta>
 					<meta name="theme-color" content="#0D47A1" />
-					<link rel="manifest" href="/manifest.json" />
+					{/* <link rel="manifest" href="/manifest.json" /> */}
 					<link rel="apple-touch-icon" href="/apple-icon.png"></link>
 				</Head>
 				<body>
