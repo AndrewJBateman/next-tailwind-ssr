@@ -12,7 +12,7 @@ export async function getStaticPaths() {
     paths: cards.map((card) => ({
       params: {
         id: card.id.toString()
-      }
+      },
     })),
     fallback: false,
   };
@@ -32,32 +32,32 @@ export async function getStaticProps({ params }) {
 export default function FullNote({ note }) {
   return (
     <div
-      className="max-w-md px-8 py-4 mx-auto my-10 bg-white rounded-lg shadow-lg"
+      className="max-w-md px-6 py-4 mx-auto my-10 bg-white rounded-lg shadow-lg"
       key="{note.id}"
     >
       <Head>
         <title>{note.title}</title>
       </Head>
+      <NextImage
+        className="min-w-full"
+        width="400"
+        height="300"
+        src="https://source.unsplash.com/random/400x300"
+        alt="random photo"
+       />
       <div>
         <h5 className="text-2xl font-semibold text-gray-800">
-          <NextImage
-            className=""
-            width="400"
-            height="300"
-            src="https://source.unsplash.com/random/400x300"
-            alt="random photo"
-          />
           <span className="mr-2 text-xl font-medium text-indigo-700">
             {note.id}.
           </span>
           {note.title}
         </h5>
         <p className="mt-2 text-gray-600">{note.body}</p>
-      </div>
-      <div className="flex justify-end">
-        <a href={"/"} className="text-xl font-medium text-indigo-700">
-          back to list...
-        </a>
+        <div className="flex justify-end">
+          <a href={"/"} className="text-xl font-medium text-indigo-700">
+            back to list...
+          </a>
+        </div>
       </div>
     </div>
   );
