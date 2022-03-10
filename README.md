@@ -1,7 +1,7 @@
 # :zap: Next Tailwind SSR
 
-* A Next/Tailwind SSR app displaying API data in a card list
-* Clicking on a card navigates to a page with the full card
+* A Next/Tailwind SSR PWA app displaying API data in a card list
+* Clicking on a card navigates to a page with the full card datta
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/next-tailwind-ssr?style=plastic)
@@ -29,17 +29,17 @@
 * Tailwind CSS added to Next.js
 * [Unsplash API](https://source.unsplash.com/) random photo is displayed
 * Latest Next/Image optimisation used so image downloaded as Webp format and automatically sized. This is a major advantage over non-optimised Images. Working for datalist page but not used for News API page as all sources have to be added to `next.config.js`
-* tba Converted to Progressive Web App (PWA).
+* Converted to Progressive Web App (PWA).
 * [Custom `Document`](https://nextjs.org/docs/advanced-features/custom-document) file `./pages/_document.js` created to override and extend default `Document`. It injects meta tags into every page
 
 ## :camera: Screenshots
 
+![Example screenshot](./img/list.png)
 ![Example screenshot](./img/card.png)
 
 ## :signal_strength: Technologies
 
 * [React v17](https://reactjs.org/) Javascript library.
-* [React icons v4](https://www.npmjs.com/package/react-icons)
 * [Next v12](https://nextjs.org/) minimalist framework for rendering react apps on the server.
 * [Tailwind v2](https://tailwindcss.com/) utility-first CSS framework
 * [PostCSS v8](https://postcss.org/) tool for transforming CSS with JavaScript
@@ -77,8 +77,8 @@ export async function getStaticPaths() {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working. Deployed.
-* To-Do: Add PWA
+* Status: Working. Deployed to Netlify. Unsplash natural image dimensions not 400 x 300 
+* To-Do: Fix image dimensions issue to raise Lighthouse score
 
 ## :clap: Inspiration
 
