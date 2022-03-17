@@ -39,7 +39,7 @@ export default function FullNote({ note }) {
         <title>{note.title}</title>
       </Head>
       <NextImage
-        className="w-400 h-300 min-w-400 max-w-400 min-h-300 max-h-300 max"
+        className="min-w-full"
         width="400"
         height="300"
         src="https://picsum.photos/400/300"
