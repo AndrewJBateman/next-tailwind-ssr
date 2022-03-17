@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import NextImage from "next/image";
+import Image from "next/image";
 
 export async function getStaticPaths() {
   const resp = await fetch(
@@ -38,9 +38,10 @@ export default function FullNote({ note }) {
       <Head>
         <title>{note.title}</title>
       </Head>
-      <NextImage
-        width="400"
-        height="300"
+      <Image
+      layout="fixed"
+      width={400}
+      height={300}
         src="https://picsum.photos/400/300"
         alt="random photo"
       />
