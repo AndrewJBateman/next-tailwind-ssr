@@ -18,6 +18,7 @@
   * [:signal_strength: Technologies](#signal_strength-technologies)
   * [:floppy_disk: Setup](#floppy_disk-setup)
   * [:computer: Code Examples](#computer-code-examples)
+  * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
   * [:file_folder: License](#file_folder-license)
@@ -76,10 +77,14 @@ export async function getStaticPaths() {
 }
 ```
 
+## :cool: Features
+
+* 100% Lighthouse score for both pages
+
 ## :clipboard: Status & To-Do List
 
 * Status: Working. Deployed to Netlify.
-* To-Do: Fix image dimensions issue to raise Lighthouse score
+* To-Do: Add content
 
 ## :clap: Inspiration
 
