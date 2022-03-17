@@ -39,10 +39,9 @@ export default function FullNote({ note }) {
         <title>{note.title}</title>
       </Head>
       <NextImage
-        className="min-w-full"
         width="400"
         height="300"
-        src="https://source.unsplash.com/random/400x300"
+        src="https://picsum.photos/400/300"
         alt="random photo"
        />
       <div>
