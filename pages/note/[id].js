@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   return {
     paths: cards.map((card) => ({
       params: {
-        id: card.id.toString()
+        id: card.id.toString(),
       },
     })),
     fallback: false,
@@ -39,11 +39,12 @@ export default function FullNote({ note }) {
         <title>{note.title}</title>
       </Head>
       <NextImage
+        className="w-400 h-300 min-w-400 max-w-400 min-h-300 max-h-300 max"
         width="400"
         height="300"
         src="https://picsum.photos/400/300"
         alt="random photo"
-       />
+      />
       <div>
         <h5 className="text-2xl font-semibold text-gray-800">
           <span className="mr-2 text-xl font-medium text-indigo-700">
