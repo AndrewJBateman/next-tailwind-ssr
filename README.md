@@ -90,7 +90,6 @@ export async function getStaticPaths() {
 
 * [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs)
 * [Stackoverflow: Next.JS "Link" vs "router.push()" vs "a" tag](https://stackoverflow.com/questions/65086108/next-js-link-vs-router-push-vs-a-tag)
-* [Convert your website into a PWA in 8 simple steps](https://milindsoorya.site/blog/convert-your-website-into-a-pwa-in-8-simple-steps-next-js-pwa-series-part-2#step-6-edit-your-_documentjs-file)
 
 ## :file_folder: License
 
