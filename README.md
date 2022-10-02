@@ -32,6 +32,28 @@
 * Latest Next/Image optimisation used so image downloaded as Webp format and automatically sized. This is a major advantage over non-optimised Images.
 * Converted to Progressive Web App (PWA).
 * [Custom `Document`](https://nextjs.org/docs/advanced-features/custom-document) file `./pages/_document.js` created to override and extend default `Document`. It injects meta tags into every page
+* Project Structure:
+
+```bash
+├── .eslintrc.json
+├── next.config.js
+├── package.json
+├── pages
+│  ├── _app.js
+│  ├── _document.js
+│  ├── api
+│  │  ├── hello.js
+│  │  └── revalidate.js
+│  ├── index.js
+│  └── note
+│    └── [id].js
+├── postcss.config.js
+├── revalidate.sh
+├── styles
+│  ├── globals.css
+│  └── Home.module.css
+└── tailwind.config.js
+```
 
 ## :camera: Screenshots
 
